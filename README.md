@@ -31,10 +31,10 @@ The tested versions are Node.js `22.21.1`, Pi `0.85.1`, `pi-subagents` `0.66.0`,
 npm install --global @earendil-works/pi-coding-agent@0.85.1
 pi install npm:pi-subagents@0.66.0
 pi install npm:pi-mcp-adapter@2.32.1
-pi install git:git@github.com:KieranBond/agentic-workflow.git@v0.1.0
+pi install git:git@github.com:KieranBond/agentic-workflow.git@v0.1.1
 ```
 
-The SSH form works for private repositories after GitHub authentication. Once the repository is public, `git:github.com/KieranBond/agentic-workflow@v0.1.0` also works.
+The SSH form works for private repositories after GitHub authentication. Once the repository is public, `git:github.com/KieranBond/agentic-workflow@v0.1.1` also works.
 
 For a new machine, run the pinned bootstrap instead:
 

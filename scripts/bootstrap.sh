@@ -4,7 +4,7 @@ set -euo pipefail
 PI_VERSION="0.85.1"
 SUBAGENTS_VERSION="0.66.0"
 MCP_ADAPTER_VERSION="2.32.1"
-WORKFLOW_SOURCE="${AGENTIC_WORKFLOW_SOURCE:-git:git@github.com:KieranBond/agentic-workflow.git@v0.1.0}"
+WORKFLOW_SOURCE="${AGENTIC_WORKFLOW_SOURCE:-git:git@github.com:KieranBond/agentic-workflow.git@v0.1.1}"
 
 if command -v asdf >/dev/null 2>&1; then
   npm_cmd=(asdf exec npm)

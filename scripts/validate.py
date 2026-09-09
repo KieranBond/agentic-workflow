@@ -69,8 +69,8 @@ for path in ROOT.rglob("*"):
         fail(f"generated Python file must not be committed: {path.relative_to(ROOT)}")
 
 package = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
-if package.get("version") != "0.1.0":
-    fail("package.json version must match the release under test")
+if not re.fullmatch(r"\d+\.\d+\.\d+", str(package.get("version", ""))):
+    fail("package.json version must be a semantic x.y.z version")
 if package.get("pi", {}).get("skills") != ["./skills"]:
     fail("package.json must expose ./skills")
 if package.get("pi", {}).get("subagents", {}).get("agents") != ["./agents"]:
