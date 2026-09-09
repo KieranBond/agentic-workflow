@@ -1,0 +1,41 @@
+{
+  "skill_name": "excalidraw",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you draw me a quick architecture diagram in Excalidraw? We have an API Gateway in the middle, it talks to three backend services (Identity Service, Integration Service, and Policy Service), and each of those has its own Postgres database. The whole thing sits behind a load balancer at the top.",
+      "expected_output": "A new Excalidraw scene is created with correctly shaped and labeled boxes for each component (load balancer, API gateway, 3 services, 3 databases), connected with arrows showing the flow, using appropriate colors to distinguish layers. The user is told the scene name and ID.",
+      "files": [],
+      "assertions": [
+        "A new Excalidraw scene was created (scene ID present in output)",
+        "All 8 components are labeled: Load Balancer, API Gateway, Identity Service, Integration Service, Policy Service, and 3 Postgres databases",
+        "Arrows connect components in the correct hierarchy (load balancer → gateway → services → databases)",
+        "Scene name and ID are reported to the user"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to map out our incident response flow as a flowchart in Excalidraw. Here's the process: an alert fires, we check if severity is critical or not. If critical: page the on-call engineer AND create a P1 Jira ticket in parallel, then both paths converge to a 'Investigate & mitigate' step. If not critical: just create a P2 Jira ticket, then go straight to investigate. Both paths end at 'Resolve & postmortem'.",
+      "expected_output": "A flowchart scene with a start node, a diamond decision node for severity, parallel branches for the critical path (two boxes side by side), convergence, and a shared end node. Arrows correctly represent the branching and merging logic.",
+      "files": [],
+      "assertions": [
+        "A new Excalidraw scene was created (scene ID present in output)",
+        "A diamond shape is used for the severity decision node",
+        "Both critical-path branches exist as separate nodes (page on-call AND P1 Jira ticket)",
+        "'Investigate & mitigate' and 'Resolve & postmortem' nodes are both present"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "hey can you make a simple excalidraw showing the data flow for our SaaS platform? basically: browser talks to our CDN, CDN forwards to API gateway, gateway fans out to 3 microservices, microservices all write to a shared kafka topic, and a separate consumer service reads from kafka and writes to our data warehouse",
+      "expected_output": "A left-to-right or top-to-bottom data flow diagram with browser, CDN, API gateway, 3 microservices (fanned out), Kafka topic, and data warehouse. Arrows show directionality. Scene created and ID reported.",
+      "files": [],
+      "assertions": [
+        "A new Excalidraw scene was created (scene ID present in output)",
+        "All major components are labeled: Browser, CDN, API Gateway, 3 microservices, Kafka, Consumer Service, Data Warehouse",
+        "Fan-out from gateway to 3 microservices is represented (3 separate service nodes)",
+        "Scene name and ID are reported to the user"
+      ]
+    }
+  ]
+}

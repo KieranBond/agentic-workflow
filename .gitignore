@@ -1,0 +1,40 @@
+# Operating-system and editor files
+.DS_Store
+*.swp
+*.tmp
+*.bak
+
+# Language caches and local environments
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+*.tgz
+*.skill
+*-workspace/
+
+# Pi runtime state and credentials
+auth.json
+notion-mcp-auth.json
+secrets/
+trust.json
+sessions/
+missions/
+run-history.jsonl
+models-store.json
+mcp-cache.json
+npm/
+git/
+intercom/
+messenger/
+.pi/subagents/
+.pi/messenger/
+
+# Local configuration containing credentials
+.env
+.env.*
+!.env.example

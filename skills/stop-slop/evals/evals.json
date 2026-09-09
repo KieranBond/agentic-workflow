@@ -1,0 +1,38 @@
+{
+  "skill_name": "stop-slop",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Clean up this paragraph. It's going into a product changelog:\n\n\"Here's the thing: at the end of the day, leveraging our state-of-the-art platform capabilities has never been easier. We are incredibly excited to announce that we have seamlessly integrated a new and improved threat detection engine that simply works better. It is important to note that this groundbreaking solution doesn't just detect threats — it actually understands them. Teams can now easily navigate uncertainty with clarity and move the needle on their security posture. Please note that in order to access these features, users will need to ensure that they have updated to the latest version.\"",
+      "expected_output": "The same content, rewritten without slop: no filler openers, no binary contrasts, no passive constructions, no adverbs, no vague declaratives, no em dashes. Direct, specific, active voice.",
+      "files": [],
+      "expectations": [
+        "Removes 'Here's the thing' or similar throat-clearing opener",
+        "Removes 'at the end of the day' or equivalent filler",
+        "Removes 'incredibly', 'seamlessly', 'simply', 'easily', 'actually', or other adverbs that were present",
+        "Removes 'please note that' and 'it is important to note that'",
+        "Removes 'in order to' in favor of plain 'to'",
+        "Removes 'leveraging', 'groundbreaking', or 'state-of-the-art' jargon",
+        "Removes the binary contrast pattern ('doesn't just X — it actually Y')",
+        "Uses active voice throughout (no 'users will need to ensure that they have updated')",
+        "Preserves the core content: new threat detection engine, update required to access"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review this README intro section and rewrite it to remove AI writing patterns:\n\n\"Welcome to SentinelBot, your intelligent companion for navigating the complex landscape of modern security operations. In today's fast-paced world, security teams find themselves overwhelmed by an ever-growing volume of alerts and threats. SentinelBot doesn't just process alerts. It understands context. It learns patterns. It empowers your team.\n\nSentinelBot was designed with the modern security practitioner in mind. Whether you're a seasoned expert or just getting started, SentinelBot seamlessly adapts to your workflow. The tool can be used to query your security data, generate reports, and take automated actions.\n\nPlease note that in order to get started, users should ensure that they have completed the initial setup process, which is described in the Getting Started guide below.\"",
+      "expected_output": "A rewritten intro that states what the tool does and who it's for without drama, fragmentation, binary contrasts, passive voice, or filler. Specific, direct, and useful.",
+      "files": [],
+      "expectations": [
+        "Removes 'Welcome to' opener or similar filler greeting",
+        "Removes dramatic fragmentation ('It understands context. It learns patterns. It empowers your team.')",
+        "Removes 'In today's fast-paced world' or equivalent landscape jargon",
+        "Removes 'seamlessly' adverb",
+        "Removes 'Please note that in order to'",
+        "Removes passive voice constructions ('was designed', 'can be used')",
+        "Preserves what the tool actually does: query security data, generate reports, take automated actions",
+        "Output is in active voice with a clear subject performing actions"
+      ]
+    }
+  ]
+}
