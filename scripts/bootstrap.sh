@@ -4,7 +4,7 @@ set -euo pipefail
 PI_VERSION="0.85.1"
 SUBAGENTS_VERSION="0.66.0"
 MCP_ADAPTER_VERSION="2.32.1"
-WORKFLOW_SOURCE="${AGENTIC_WORKFLOW_SOURCE:-git:git@github.com:KieranBond/agentic-workflow.git@v0.1.1}"
+WORKFLOW_SOURCE="${AGENTIC_WORKFLOW_SOURCE:-git:github.com/KieranBond/agentic-workflow@v0.1.2}"
 
 if command -v asdf >/dev/null 2>&1; then
   npm_cmd=(asdf exec npm)
@@ -52,12 +52,11 @@ cat <<'CHECKLIST'
 Bootstrap complete. Authenticate services on this machine; do not copy credential files:
 
   1. Start Pi and use /login for each model provider you intend to use.
-  2. Run `gh auth login` if the workflow repository remains private.
-  3. Run `glab auth login` before using GitLab skills.
-  4. Run `jira init` before using the Jira skill.
-  5. Create `~/.sentryclirc` locally before using the Sentry skill.
-  6. Configure the Excalidraw MCP server locally; never commit its credentials.
-  7. Optionally merge config/subagent-overrides.example.json into
+  2. Run `glab auth login` before using GitLab skills.
+  3. Run `jira init` before using the Jira skill.
+  4. Create `~/.sentryclirc` locally before using the Sentry skill.
+  5. Configure the Excalidraw MCP server locally; never commit its credentials.
+  6. Optionally merge config/subagent-overrides.example.json into
      ~/.pi/agent/settings.json after confirming every model ID with
      `subagent({ action: "models" })`.
 
